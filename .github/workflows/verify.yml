@@ -22,7 +22,8 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: node scripts/package.mjs
-      - run: unzip -p release/screenguard-*.zip manifest.json | grep '"manifest_version": 3'
+      - run: |
+          unzip -p release/screenguard-*.zip manifest.json | grep '"manifest_version": 3'
       - uses: actions/upload-artifact@v4
         with:
           name: screenguard-extension
