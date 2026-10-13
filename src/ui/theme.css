@@ -1,0 +1,201 @@
+/*
+ * ScreenGuard design tokens.
+ *
+ * Every colour pairing here is measured, not eyeballed: text tokens clear
+ * WCAG AA (4.5:1) against every surface they are used on, and anything that
+ * forms the boundary of a control clears 3:1. See test/contrast.test.ts —
+ * the ratios are asserted, so a "nicer" lighter grey cannot quietly ship.
+ */
+
+:root {
+  /* surfaces */
+  --sg-canvas: #f5f6f9;
+  --sg-surface: #ffffff;
+  --sg-surface-2: #f7f8fb;
+
+  /* lines — border separates, control outlines a thing you can operate */
+  --sg-border: #e6e8ef;
+  --sg-control: #868ea5;
+
+  /* text */
+  --sg-text: #0f1222;
+  --sg-text-2: #4b5164;
+  --sg-muted: #5f6675;
+
+  /* accent */
+  --sg-primary: #4f46e5;
+  --sg-primary-hover: #4338ca;
+  --sg-primary-soft: #eef0fe;
+
+  /* status */
+  --sg-safe: #07734f;
+  --sg-safe-soft: #e6f5ef;
+  --sg-warn: #8c5200;
+  --sg-warn-soft: #fcf2e0;
+  --sg-risk: #c8123f;
+  --sg-risk-soft: #fdeef2;
+
+  /* radius */
+  --sg-r-sm: 8px;
+  --sg-r-md: 12px;
+  --sg-r-lg: 16px;
+
+  /* depth — offset plus soft blur, never a flat halo */
+  --sg-shadow-sm: 0 1px 2px rgba(16, 18, 34, .05);
+  --sg-shadow-md: 0 1px 2px rgba(16, 18, 34, .04), 0 8px 20px -6px rgba(16, 18, 34, .12);
+  --sg-shadow-lg: 0 1px 2px rgba(16, 18, 34, .04), 0 24px 48px -12px rgba(16, 18, 34, .2);
+
+  /* motion */
+  --sg-ease: cubic-bezier(.2, .8, .3, 1);
+  --sg-fast: 140ms;
+  --sg-base: 200ms;
+
+  /* layering */
+  --sg-z-raised: 10;
+  --sg-z-sticky: 20;
+  --sg-z-overlay: 30;
+  --sg-z-toast: 50;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--sg-canvas);
+  color: var(--sg-text);
+  /* Browser UI should look like browser UI: Chrome's own surfaces use the
+     platform face, and a webfont would cost a blocking request on a popup
+     that has to open instantly. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 22px; font-weight: 640; letter-spacing: -.025em; }
+h2 { font-size: 16px; font-weight: 620; letter-spacing: -.015em; }
+h3 {
+  font-size: 12px; font-weight: 620; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--sg-muted);
+}
+
+code, .mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12.5px;
+}
+
+button { font: inherit; color: inherit; }
+a { color: var(--sg-primary); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[role="switch"]:focus-visible {
+  outline: 2px solid var(--sg-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection { background: var(--sg-primary-soft); }
+
+/* ------------------------------------------------------------------ card -- */
+.card {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: var(--sg-r-lg);
+  box-shadow: var(--sg-shadow-sm);
+}
+
+/* ---------------------------------------------------------------- button -- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  border: 1px solid transparent; border-radius: var(--sg-r-md);
+  padding: 9px 15px; font-size: 13.5px; font-weight: 550; cursor: pointer;
+  transition: background var(--sg-fast) var(--sg-ease),
+              border-color var(--sg-fast) var(--sg-ease),
+              color var(--sg-fast) var(--sg-ease);
+  text-decoration: none; white-space: nowrap;
+}
+.btn:disabled { opacity: .55; cursor: default; }
+.btn.primary { background: var(--sg-primary); color: #fff; }
+.btn.primary:hover:not(:disabled) { background: var(--sg-primary-hover); }
+.btn.secondary { background: var(--sg-surface); border-color: var(--sg-control); color: var(--sg-text-2); }
+.btn.secondary:hover:not(:disabled) { background: var(--sg-surface-2); color: var(--sg-text); }
+.btn.quiet { background: transparent; color: var(--sg-muted); font-weight: 500; padding: 8px 10px; }
+.btn.quiet:hover:not(:disabled) { background: var(--sg-surface-2); color: var(--sg-text); }
+.btn.danger { background: var(--sg-surface); border-color: var(--sg-control); color: var(--sg-risk); }
+.btn.danger:hover:not(:disabled) { background: var(--sg-risk-soft); border-color: var(--sg-risk); }
+.btn.block { width: 100%; }
+.btn.lg { padding: 12px 20px; font-size: 14.5px; border-radius: 13px; }
+
+/* ---------------------------------------------------------------- switch -- */
+.switch {
+  position: relative; display: inline-flex; align-items: center;
+  width: 42px; height: 24px; flex: 0 0 42px; cursor: pointer;
+  border: 1px solid var(--sg-control); padding: 0; border-radius: 999px;
+  background: #e4e6ee;
+  transition: background var(--sg-base) var(--sg-ease),
+              border-color var(--sg-base) var(--sg-ease);
+}
+.switch[data-on="true"] { background: var(--sg-primary); border-color: var(--sg-primary); }
+.switch::after {
+  content: ""; position: absolute; top: 2px; left: 2px;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  box-shadow: 0 1px 3px rgba(16, 18, 34, .3);
+  transition: transform var(--sg-base) var(--sg-ease);
+}
+.switch[data-on="true"]::after { transform: translateX(18px); }
+/* Keeps the visual switch at the desktop size while giving the pointer a
+   comfortable 44px-tall target. */
+.switch::before { content: ""; position: absolute; inset: -10px; border-radius: 999px; }
+.switch.sm { width: 36px; height: 20px; flex-basis: 36px; }
+.switch.sm::after { width: 14px; height: 14px; }
+.switch.sm[data-on="true"]::after { transform: translateX(16px); }
+
+/* ------------------------------------------------------------------ misc -- */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 24px; padding: 0 9px; border-radius: 999px;
+  font-size: 12px; font-weight: 560; white-space: nowrap;
+}
+.pill.safe { background: var(--sg-safe-soft); color: var(--sg-safe); }
+.pill.warn { background: var(--sg-warn-soft); color: var(--sg-warn); }
+.pill.risk { background: var(--sg-risk-soft); color: var(--sg-risk); }
+.pill.idle { background: var(--sg-surface-2); color: var(--sg-muted); }
+
+/* A status dot always travels with a word or an icon — never colour alone. */
+.dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 7px; display: inline-block; }
+.dot.safe { background: var(--sg-safe); }
+.dot.warn { background: var(--sg-warn); }
+.dot.risk { background: var(--sg-risk); }
+.dot.idle { background: #9aa1b5; }
+
+.row { display: flex; align-items: center; gap: 12px; }
+.spacer { flex: 1; }
+.muted { color: var(--sg-muted); }
+.small { font-size: 12.5px; }
+
+.host-chip {
+  display: block; padding: 9px 11px; border-radius: var(--sg-r-sm);
+  background: var(--sg-surface-2); border: 1px solid var(--sg-border);
+  word-break: break-all;
+}
+
+.divider { height: 1px; background: var(--sg-border); border: 0; margin: 0; }
+
+.fade-in { animation: sg-fade var(--sg-base) var(--sg-ease) both; }
+@keyframes sg-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::after, *::before {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.switch:disabled { opacity: .45; cursor: not-allowed; }

@@ -1,0 +1,104 @@
+.sg-popup-root { width: 380px; }
+
+body { background: var(--sg-surface); }
+
+.popup { width: 380px; display: flex; flex-direction: column; }
+
+/* ---------------------------------------------------------------- header -- */
+.popup-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 15px 10px;
+}
+.popup-header .brand {
+  font-size: 15px; font-weight: 620; letter-spacing: -.02em; line-height: 1.2;
+}
+
+/* ------------------------------------------------------------------ list -- */
+.popup-body { padding: 0 12px 10px; display: flex; flex-direction: column; gap: 9px; }
+
+.panel { overflow: hidden; }
+
+/* the master control, sitting above the modes it governs */
+.panel-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 15px 11px;
+}
+.panel-head .title { font-size: 14px; font-weight: 580; letter-spacing: -.01em; }
+.panel-head .sub {
+  font-size: 12.5px; color: var(--sg-muted); margin-top: 2px; line-height: 1.4;
+}
+
+.mode-list { border-top: 1px solid var(--sg-border); }
+
+.mode {
+  display: flex; align-items: center; gap: 11px;
+  padding: 8px 15px;
+  /* These rows report state; they are not targets. The switch inside the
+     screen-share row carries its own expanded hit area instead. */
+  min-height: 40px;
+}
+.mode + .mode { border-top: 1px solid var(--sg-border); }
+.mode .glyph { color: var(--sg-muted); margin-top: 1px; }
+.mode .text { min-width: 0; flex: 1; }
+.mode .name { font-size: 13px; font-weight: 540; letter-spacing: -.005em; }
+.mode .desc { font-size: 12px; color: var(--sg-muted); margin-top: 1px; line-height: 1.35; }
+.mode .state { display: flex; align-items: center; gap: 5px; flex: 0 0 auto; }
+
+/* An icon plus a word — never colour on its own — reports each mode's state. */
+.mode .on { color: var(--sg-safe); }
+.mode .off { font-size: 12px; color: var(--sg-muted); font-weight: 500; }
+
+.mode.is-active {
+  background: var(--sg-safe-soft);
+  box-shadow: inset 2px 0 0 var(--sg-safe);
+}
+.mode.is-active .glyph { color: var(--sg-safe); }
+.mode.is-active .desc { color: var(--sg-safe); }
+
+.mode.is-muted .name,
+.mode.is-muted .glyph { color: var(--sg-muted); }
+
+/* ----------------------------------------------------------------- stats -- */
+.stats-row {
+  display: flex; align-items: center; gap: 11px;
+  padding: 10px 15px;
+  border-top: 1px solid var(--sg-border);
+  background: var(--sg-surface-2);
+}
+.stats-row .glyph { color: var(--sg-muted); }
+.stats-row .label { font-size: 12.5px; font-weight: 540; }
+.stats-row .figures {
+  font-size: 12px; color: var(--sg-muted); margin-top: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------- current site -- */
+.site-card { padding: 11px 14px; display: flex; align-items: center; gap: 10px; }
+.site-card .host {
+  font-size: 12.5px; font-weight: 550; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.site-card .why {
+  font-size: 12px; color: var(--sg-muted); margin-top: 1px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- footer -- */
+.popup-footer {
+  border-top: 1px solid var(--sg-border);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.foot-btn {
+  display: flex; align-items: center; gap: 11px; width: 100%;
+  background: none; border: 0; cursor: pointer; text-align: left;
+  padding: 8px 11px; border-radius: 10px; font-size: 13px; color: var(--sg-text-2);
+  min-height: 38px;
+  transition: background var(--sg-fast) var(--sg-ease), color var(--sg-fast) var(--sg-ease);
+}
+.foot-btn:hover { background: var(--sg-surface-2); color: var(--sg-text); }
+.foot-btn .glyph { color: var(--sg-muted); }
+.foot-btn:hover .glyph { color: var(--sg-text-2); }
+.foot-btn .spacer { flex: 1; }
+.foot-btn .chev { color: var(--sg-muted); }

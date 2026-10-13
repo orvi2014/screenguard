@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.tile{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#5b5bf7 0%,#4338ca 45%,#1e1b4b 100%)}
+.card{background:#fff;border-radius:18px;box-shadow:0 30px 60px rgba(10,8,40,.45);color:#475569}
+.row{display:flex;align-items:center;border-bottom:1px solid #e2e8f0}
+.row:last-of-type{border-bottom:0}
+.lab{color:#64748b}
+.val{filter:blur(6px);color:#1e293b;font-family:ui-monospace,Menlo,monospace}
+.chip{position:absolute;background:#fff;border-radius:14px;box-shadow:0 18px 40px rgba(10,8,40,.4);display:flex;align-items:center;color:#0f172a}
+.dot{border-radius:50%;background:#6366f1}
+/* marquee */
+#m{width:1400px;height:560px;padding:0 90px;display:flex;align-items:center;gap:70px}
+#m .copy{flex:0 0 560px}
+#m .brand{display:flex;align-items:center;gap:14px;font-size:26px;font-weight:600;opacity:.95;margin-bottom:34px}
+#m .brand img{width:52px;height:52px}
+#m h1{font-size:66px;line-height:1.04;letter-spacing:-1.8px;font-weight:750}
+#m p{margin-top:24px;font-size:24px;line-height:1.4;color:#c7d2fe}
+#m .card{flex:1;padding:14px 34px;position:relative}
+#m .row{height:66px;font-size:21px}
+#m .lab{width:200px}
+#m .chip{right:-26px;bottom:-30px;padding:16px 22px;gap:14px;font-size:19px;font-weight:650}
+#m .dot{width:12px;height:12px}
+/* small */
+#s{width:440px;height:280px;padding:30px 32px}
+#s .brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600}
+#s .brand img{width:34px;height:34px}
+#s h1{margin-top:22px;font-size:33px;line-height:1.08;letter-spacing:-.8px;font-weight:750}
+#s .card{position:absolute;left:32px;right:32px;bottom:24px;padding:6px 18px;border-radius:14px}
+#s .row{height:36px;font-size:13px}
+#s .lab{width:96px}
+#s .val{filter:blur(4px)}
+</style></head><body>
+<div id="m" class="tile">
+  <div class="copy">
+    <div class="brand"><img src="logo.png">ScreenGuard</div>
+    <h1>Share your screen, not your secrets.</h1>
+    <p>Blurs emails, card numbers and API keys on every call, and stops risky links before they open.</p>
+  </div>
+  <div class="card">
+    <div class="row"><span class="lab">Customer email</span><span class="val">dana.fischer@northwind.io</span></div>
+    <div class="row"><span class="lab">Phone</span><span class="val">+1 415 555 0182</span></div>
+    <div class="row"><span class="lab">Card number</span><span class="val">4242 4242 4242 4242</span></div>
+    <div class="row"><span class="lab">Stripe key</span><span class="val">sk_live_51Hx9QeLk2vZ7yT</span></div>
+    <div class="row"><span class="lab">GitHub token</span><span class="val">ghp_8kQz2LmN4rT7wX1yB5</span></div>
+  <div class="chip"><span class="dot"></span>5 items hidden</div>
+  </div>
+</div>
+<div style="height:40px"></div>
+<div id="s" class="tile">
+  <div class="brand"><img src="logo.png">ScreenGuard</div>
+  <h1>Blur secrets while<br>you screen share</h1>
+  <div class="card">
+    <div class="row"><span class="lab">Email</span><span class="val">dana.fischer@northwind.io</span></div>
+    <div class="row"><span class="lab">Card</span><span class="val">4242 4242 4242 4242</span></div>
+  </div>
+</div>
+</body></html>

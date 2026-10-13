@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.env.local
+public/icons/*.png
+.DS_Store
+release
+brag-output-*
+.firecrawl

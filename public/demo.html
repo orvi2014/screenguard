@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ScreenGuard — Demo</title>
+<link rel="icon" href="./icons/icon32.png" />
+<style>
+  :root {
+    --canvas: #f5f6f9; --surface: #fff; --border: #e6e8ef;
+    --text: #0f1222; --text-2: #4b5164; --muted: #7b8194; --primary: #4f46e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--canvas); color: var(--text);
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 100px; }
+
+  .banner {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 18px 20px; margin-bottom: 32px;
+    box-shadow: 0 1px 2px rgba(16,18,34,.05);
+  }
+  .banner h1 { font-size: 17px; font-weight: 620; letter-spacing: -.02em; margin: 0 0 6px; }
+  .banner p { margin: 0; color: var(--text-2); font-size: 13.5px; }
+  .banner ol { margin: 10px 0 0; padding-left: 18px; color: var(--text-2); font-size: 13.5px; }
+  .banner li { margin-bottom: 3px; }
+
+  .searchbar {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 11px 18px; margin-bottom: 28px;
+    color: var(--muted); font-size: 14px;
+    box-shadow: 0 1px 2px rgba(16,18,34,.05);
+  }
+
+  h2 { font-size: 12px; font-weight: 620; letter-spacing: .07em; text-transform: uppercase;
+       color: var(--muted); margin: 34px 0 14px; }
+
+  .result { margin-bottom: 26px; }
+  .result .crumb { color: var(--muted); font-size: 12.5px; margin-bottom: 3px; }
+  .result a {
+    color: #1a3bd6; font-size: 18px; text-decoration: none; letter-spacing: -.01em;
+  }
+  .result a:hover { text-decoration: underline; }
+  .result p { color: var(--text-2); font-size: 13.5px; margin: 5px 0 0; max-width: 620px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(16,18,34,.05);
+  }
+  .kv { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+  .kv:last-child { border-bottom: 0; }
+  .kv .k { color: var(--muted); width: 150px; flex: 0 0 150px; }
+  .kv .v { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; word-break: break-all; }
+
+  .note { color: var(--muted); font-size: 12.5px; margin-top: 12px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 12.5px; text-align: center; }
+  footer a { color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="flex:0 0 26px">
+      <defs><linearGradient id="g" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#5C6AFF"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+      <path d="M12 2.2 4.2 5.3v6.4c0 4.8 3.2 8.9 7.8 10.2 4.6-1.3 7.8-5.4 7.8-10.2V5.3L12 2.2Z" fill="url(#g)"/>
+      <path d="m8.6 12 2.4 2.4 4.4-4.7" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <h1>ScreenGuard demo</h1>
+      <p>A safe sandbox that behaves like a page of search results. Nothing here is a real website.</p>
+      <ol>
+        <li><strong>Hover</strong> a flagged result — a warning appears next to the link.</li>
+        <li><strong>Click</strong> one — the navigation is stopped before it starts.</li>
+        <li>Choose <strong>Open anyway</strong> — ScreenGuard steps aside and the browser tries the address.</li>
+        <li>Turn on <strong>“I’m sharing my screen”</strong> in the popup, then reload — the values at the bottom blur.</li>
+      </ol>
+      <p class="note">The flagged links point at reserved <code>.test</code> addresses that intentionally do not
+        resolve, so “Open anyway” ends at a browser “site can’t be reached” page. That is the demo working.</p>
+    </div>
+  </div>
+
+  <div class="searchbar">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5" stroke="#7b8194" stroke-width="1.8"/>
+      <path d="m16 16 4.5 4.5" stroke="#7b8194" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <span>best free video downloader</span>
+  </div>
+
+  <h2>Search results</h2>
+
+  <div class="result">
+    <div class="crumb">github.com › explore</div>
+    <a href="https://github.com/explore">GitHub — Explore open source projects</a>
+    <p>Discover repositories, collections and topics from the open source community.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">techcrunch.com › startups</div>
+    <a href="https://techcrunch.com/startups/">TechCrunch — Startup and technology news</a>
+    <p>The latest funding rounds, product launches and industry analysis.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">adult-demo.test › videos</div>
+    <a href="https://adult-demo.test/videos">Client Website — Media Library</a>
+    <p>A deliberately innocuous-looking title pointing at a domain ScreenGuard classifies as adult content.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">en.wikipedia.org › wiki</div>
+    <a href="https://en.wikipedia.org/wiki/Screen_sharing">Screen sharing — Wikipedia</a>
+    <p>Screen sharing is the practice of transmitting the contents of a display to other participants.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">download-example.test › get</div>
+    <a href="https://download-example.test/get/installer.exe">Free Video Downloader 2026 — Instant Download</a>
+    <p>Flagged twice over: a domain on the malware list, and a link that downloads a program.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">casino-demo.test › welcome</div>
+    <a href="https://casino-demo.test/welcome-bonus">Welcome Bonus — 200 Free Spins</a>
+    <p>Matches the gambling category.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">paypal-secure-login.verify-account.test</div>
+    <a href="https://paypal-secure-login.verify-account.test/signin">PayPal — Confirm your account details</a>
+    <p>Caught by the phishing heuristics: a well-known brand name on a domain that isn’t theirs.</p>
+  </div>
+
+  <div class="result">
+    <div class="crumb">news.ycombinator.com</div>
+    <a href="https://news.ycombinator.com/">Hacker News</a>
+    <p>A normal link. ScreenGuard shows nothing at all — that is the intended experience.</p>
+  </div>
+
+  <h2>Sensitive content</h2>
+
+  <div class="card">
+    <div class="kv"><span class="k">Support email</span><span class="v">jordan.avery@examplecorp.com</span></div>
+    <div class="kv"><span class="k">Phone</span><span class="v">+1 415 555 0142</span></div>
+    <div class="kv"><span class="k">Stripe key</span><span class="v">sk_live_51MzQxPGh8Kd0LmTnRvB2XcYw</span></div>
+    <div class="kv"><span class="k">AWS access key</span><span class="v">AKIAIOSFODNN7EXAMPLE</span></div>
+    <div class="kv"><span class="k">GitHub token</span><span class="v">ghp_1a2B3c4D5e6F7g8H9i0JkLmNoPqRsTuVwXyZ</span></div>
+    <div class="kv"><span class="k">Test card</span><span class="v">4242 4242 4242 4242</span></div>
+    <div class="kv"><span class="k">Session JWT</span><span class="v">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U</span></div>
+    <p class="note">All fabricated. Turn on screen-share mode in the ScreenGuard popup and reload this page —
+      these values blur, with a “Reveal” control in the corner.</p>
+  </div>
+
+  <footer>
+    <a href="settings.html">Settings</a> · <a href="history.html">Protection history</a>
+  </footer>
+</div>
+
+<!-- Extension pages are off-limits to content scripts, so the demo loads the
+     same bundle directly. It is byte-for-byte the script that runs on real sites. -->
+<script src="content.js"></script>
+</body>
+</html>

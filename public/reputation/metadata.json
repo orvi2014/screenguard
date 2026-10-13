@@ -1,0 +1,11 @@
+{
+  "format": "screenguard-category-tsv-v1",
+  "generatedAt": "2026-09-16T13:45:12.609Z",
+  "domains": 1295499,
+  "sha256": "cbc0f9f6fdc4db3ae5e940bbc985414397c7992e1b5996bd7b4a33b913e60d3d",
+  "sources": [
+    "https://blocklistproject.github.io/Lists/porn.txt",
+    "https://blocklistproject.github.io/Lists/gambling.txt"
+  ],
+  "license": "MIT"
+}
