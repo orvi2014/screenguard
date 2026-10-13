@@ -1,6 +1,7 @@
 {
   "name": "screenguard",
   "private": true,
+  "license": "MIT",
   "version": "1.0.17",
   "description": "ScreenGuard — Never accidentally share what you shouldn't.",
   "type": "module",

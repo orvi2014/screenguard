@@ -1,5 +1,13 @@
 # ScreenGuard
 
+[![Verify extension](https://github.com/orvi2014/screenguard/actions/workflows/verify.yml/badge.svg)](https://github.com/orvi2014/screenguard/actions/workflows/verify.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white)
+<!-- Chrome Web Store badge: replace EXTENSION_ID with the 32-letter ID from the store URL, then uncomment.
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/EXTENSION_ID?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/EXTENSION_ID)
+[![Users](https://img.shields.io/chrome-web-store/users/EXTENSION_ID)](https://chromewebstore.google.com/detail/EXTENSION_ID)
+-->
+
 **Never accidentally share what you shouldn't.**
 
 A Manifest V3 Chrome extension that warns you before a risky link opens — and gets
@@ -382,3 +390,9 @@ rule cleanup, allocation against rules surviving a worker restart, and failed wr
 Temporary allowances last up to two minutes in their destination tab. Repeated
 allowances replace the previous network rule. A scheduled alarm expires grants;
 worker wake and tab closure also reconcile persisted records with Chrome's rules.
+
+---
+
+## License
+
+[MIT](LICENSE) © 2026 Robat Das
