@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScreenGuard Privacy Policy</title>
+<meta name="description" content="ScreenGuard has no server and collects nothing. How the Chrome extension handles your data, settings and permissions.">
+<link rel="canonical" href="https://orvi2014.github.io/screenguard/privacy.html">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--brand:#4f46e5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b1020;--surface:#121a2e;--ink:#e2e8f0;--muted:#94a3b8;--line:#1f2a44;--brand:#818cf8}}
+:root[data-theme="dark"]{--bg:#0b1020;--surface:#121a2e;--ink:#e2e8f0;--muted:#94a3b8;--line:#1f2a44;--brand:#818cf8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--brand)} h1{font-size:34px;line-height:1.15} h2{margin-top:36px;font-size:22px}
+p,li{color:var(--ink)} table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;display:block;overflow-x:auto}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.back{display:inline-block;margin-bottom:24px;text-decoration:none}
+</style></head><body><main>
+<a class="back" href="./">← ScreenGuard</a>
+<h1>ScreenGuard Privacy Policy</h1>
+<p><strong>Last updated: 11 September 2026</strong></p>
+<h2>The short version</h2>
+<p>ScreenGuard has no ScreenGuard-operated server and sells nothing. Core protection and
+sensitive-text detection happen inside your browser, on your computer. Optional Gemini
+visual detection is the one exception: if you enable it and supply your own API key,
+selected thumbnails are sent directly to Google for classification.</p>
+<h2>What ScreenGuard collects</h2>
+<p>Nothing for the default, local-only product. ScreenGuard has no analytics, telemetry,
+crash reporting, advertising identifier or remote configuration.</p>
+<p>There is no account, no analytics, no telemetry, no crash reporting, no advertising
+identifier, and no remote configuration. The extension makes no network requests of
+its own unless you explicitly enable Gemini visual detection.</p>
+<h2>What stays on your device</h2>
+<p>These are stored locally using Chrome's extension storage and never leave your computer:</p>
+<ul>
+<li><strong>Your settings</strong> — which protection categories are on, screen-share preferences,
+  and how sensitive content should be handled.</li>
+<li><strong>Your lists</strong> — the websites you have chosen to always allow or always block.</li>
+<li><strong>Your protection history</strong> — a local record of what was blocked, warned about or
+  allowed, so you can review it. You can erase it at any time from the Protection
+  history page, and doing so deletes it permanently.</li>
+<li><strong>Daily counters</strong> — how many links were checked and how many pages were blocked today.</li>
+<li><strong>Optional Gemini API key</strong> — if you add one, it is stored in your Chrome profile so
+  the extension can make direct requests to Google Gemini. Use an API key restricted to
+  the Gemini API, and use the Settings control to remove it at any time.</li>
+</ul>
+<p>Uninstalling the extension removes all of it.</p>
+<h2>How websites are checked</h2>
+<p>When you hover or click a link, or navigate to a page, ScreenGuard compares the
+address against a list and a set of rules that are <strong>bundled inside the extension</strong>.
+The comparison happens on your machine. The address is not sent to us or to any
+third party, because there is no service to send it to.</p>
+<h2>How sensitive content detection works</h2>
+<p>When sensitive-content hiding is active, ScreenGuard looks for patterns that resemble
+email addresses, phone numbers, card numbers, API keys and tokens in visible page text
+and form fields, and blurs matching values visually.</p>
+<p>This reads the page inside the page. The text is never sent to the extension's
+background process, to a server, or to any AI service. Nothing is stored — the
+detection runs again each time a page loads.</p>
+<h2>Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Why it is needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Storage</td>
+<td>Keeps your settings, lists and history on your device</td>
+</tr>
+<tr>
+<td>Web navigation</td>
+<td>Detects a navigation as it starts so a warning can replace its destination</td>
+</tr>
+<tr>
+<td>Declarative net request</td>
+<td>Lets Chrome block known risky addresses without the extension observing your traffic</td>
+</tr>
+<tr>
+<td>Alarms</td>
+<td>Expires temporary "open anyway" permissions</td>
+</tr>
+<tr>
+<td>Access to websites</td>
+<td>Content scripts run local link checks and sensitive-content hiding</td>
+</tr>
+<tr>
+<td>Identity (optional)</td>
+<td>Only requested if you explicitly choose to sign in. Not enabled in this release</td>
+</tr>
+</tbody>
+</table>
+<p>Chrome's "access to websites" permission is broad by necessity: the extension cannot
+know in advance which page you will visit. Content scripts use this access for
+local checks. ScreenGuard requests no explicit required or optional host permissions;
+network protection uses native block and allow rules. The popup and existing-tab
+checks ask page content scripts for their own addresses.</p>
+<h2>Third parties</h2>
+<p>ScreenGuard does not use third-party analytics, error tracking, advertising networks or
+content delivery networks. If, and only if, you turn on Gemini visual detection, up to
+three visible thumbnails from the page and your API key are sent directly to Google
+Gemini to classify explicit content. ScreenGuard does not receive a copy, keep a server
+copy, or use those images for analytics. Google handles that request under the terms
+and settings of your Google AI account.</p>
+<h2>Children</h2>
+<p>ScreenGuard is not directed at children and collects no information from anyone,
+including children.</p>
+<h2>Changes</h2>
+<p>If a future version collects or transmits anything, this policy will be updated
+before that version is released, and the change will be described in the extension's
+listing.</p>
+<h2>Reporting a problem</h2>
+<p>ScreenGuard's Settings page and its block page both offer to report a problem — a
+site flagged by mistake, a risky site that got through, or a bug. Choosing one opens
+a message in <strong>your own mail client</strong>, pre-filled with a template and the extension's
+version number. A false-positive report also includes the blocked address, category and
+reason shown on the block page so it can be investigated; you can remove or edit them.</p>
+<p>Nothing is sent automatically. You can read and edit every word before deciding
+whether to send it, and no browsing history, page content or diagnostic data is
+attached. The only information that reaches us is what you leave in the draft.</p>
+<h2>Contact</h2>
+<p>Questions about this policy, or anything else about the extension:</p>
+<p><strong>hello@robatdasorvi.com</strong></p>
+<p>If you write to us, we hold your email address and message for as long as it takes
+to answer you. We do not add it to a mailing list and we do not share it.</p>
+</main></body></html>

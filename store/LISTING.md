@@ -124,7 +124,10 @@ Certifications to tick:
 - I do not use or transfer user data for purposes unrelated to my item's single purpose
 - I do not use or transfer user data to determine creditworthiness or for lending purposes
 
-**Privacy policy URL** — required. Publish `store/PRIVACY.md` at a public URL and paste it here.
+**Privacy policy URL**
+```
+https://orvi2014.github.io/screenguard/privacy.html
+```
 
 **Support contact** — `hello@robatdasorvi.com` (also reachable from inside the
 extension: Settings › Help, and the "Tell the developer it was wrong" link on any
@@ -141,7 +144,23 @@ block page).
 | Small promo tile | 440×280 PNG | `store/promo/small-tile-440x280.png` |
 | Marquee promo tile | 1400×560 PNG | `store/promo/marquee-1400x560.png` |
 
-Screenshot order is deliberate: what it is, the core moment, the block page, screen-share mode, then the privacy stance.
+Upload the **captioned** screenshots from `store/screenshots-captioned/`, in file-name order: blur secrets, hover warning, blocked page, one switch, private by design. Each has a keyword headline so the gallery explains the extension without reading the description.
+
+## Store listing SEO
+
+| Field | Value |
+|---|---|
+| Official URL / Homepage | `https://orvi2014.github.io/screenguard/` (also set as `homepage_url` in the manifest) |
+| Privacy policy | `https://orvi2014.github.io/screenguard/privacy.html` |
+| Support URL | `https://github.com/orvi2014/screenguard/issues` |
+| Promo video | Upload `brag-output-2026-09-19-023716/brag.mp4` to YouTube (unlisted is fine) and paste the link |
+
+The name, short description and the first lines of the detailed description carry
+the search terms people actually type: *screen share*, *blur*, *sensitive info*,
+*Zoom*, *Meet*, *Teams*, *API keys*, *phishing*. Keep them there in future edits.
+
+Ratings and installs move rankings more than wording at this stage: after each
+release, ask early users for a review.
 
 ---
 

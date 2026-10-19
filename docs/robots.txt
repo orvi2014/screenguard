@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://orvi2014.github.io/screenguard/sitemap.xml
