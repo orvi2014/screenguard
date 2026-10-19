@@ -3,10 +3,7 @@
 [![Verify extension](https://github.com/orvi2014/screenguard/actions/workflows/verify.yml/badge.svg)](https://github.com/orvi2014/screenguard/actions/workflows/verify.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white)
-<!-- Chrome Web Store badge: replace EXTENSION_ID with the 32-letter ID from the store URL, then uncomment.
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/EXTENSION_ID?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/EXTENSION_ID)
-[![Users](https://img.shields.io/chrome-web-store/users/EXTENSION_ID)](https://chromewebstore.google.com/detail/EXTENSION_ID)
--->
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dggihakhjjleajeimnfipcgbadkbjdcn?label=Chrome%20Web%20Store&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=github)
 
 <p align="center">
   <img src="store/promo/marquee-1400x560.png" alt="ScreenGuard: share your screen, not your secrets" width="100%">
@@ -34,12 +31,12 @@ browsing history ever leave the browser.
 
 ## Install
 
+- **Chrome Web Store (recommended):** [install ScreenGuard](https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=github).
 - **Download a release:** grab `screenguard-<version>.zip` from
   [Releases](https://github.com/orvi2014/screenguard/releases/latest), unzip it, open
   `chrome://extensions`, turn on **Developer mode** and click **Load unpacked** on the
   unzipped folder.
 - **Build from source:** see [Quick start](#quick-start) below.
-<!-- Add the Chrome Web Store link here once the listing URL is known. -->
 
 ## Screenshots
 

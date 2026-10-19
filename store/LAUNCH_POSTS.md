@@ -1,8 +1,7 @@
 # Launch posts
 
-Replace `STORE_LINK` with the Web Store URL. Add a different `utm_source` to the
-link in each post (`?utm_source=reddit`, `?utm_source=hn`, …) so the Developer
-Dashboard shows which post brought installs.
+Each store link below carries its own `utm_source`, so the Developer Dashboard
+shows which post brought installs.
 
 Fill in every `[YOUR REAL REASON …]` with your own story; a real reason is what makes these posts land.
 
@@ -30,7 +29,7 @@ Before a call you flip "I'm sharing my screen" (or leave it always on) and it:
 
 It has no server. Everything runs locally, with no analytics and no account. On normal sites it shows nothing at all.
 
-It's free: STORE_LINK
+It's free: https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=reddit_chrome_extensions
 
 It's early and I'd really like feedback, especially anything it blurs that it shouldn't, or misses that it should.
 ```
@@ -54,7 +53,7 @@ I built a free Chrome extension, ScreenGuard, for exactly this. Turn on "I'm sha
 
 It runs entirely in your browser. No server, no account, nothing leaves your machine, which matters if your security team reviews extensions.
 
-STORE_LINK
+https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=reddit_sales
 
 Curious what else people would want hidden during demos. Deal sizes? Customer logos?
 ```
@@ -72,7 +71,7 @@ Show HN: ScreenGuard – a Chrome extension that blurs secrets while you screen 
 
 **URL**
 ```
-STORE_LINK
+https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=hn
 ```
 
 **First comment**
@@ -130,5 +129,5 @@ Shipped ScreenGuard: a free Chrome extension that blurs emails, card numbers and
 
 No server, no analytics, no account. Everything runs on your machine.
 
-Would love feedback 👉 STORE_LINK
+Would love feedback 👉 https://chromewebstore.google.com/detail/screenguard/dggihakhjjleajeimnfipcgbadkbjdcn?utm_source=indiehackers
 ```
