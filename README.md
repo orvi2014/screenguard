@@ -8,11 +8,46 @@
 [![Users](https://img.shields.io/chrome-web-store/users/EXTENSION_ID)](https://chromewebstore.google.com/detail/EXTENSION_ID)
 -->
 
+<p align="center">
+  <img src="store/promo/marquee-1400x560.png" alt="ScreenGuard: share your screen, not your secrets" width="100%">
+</p>
+
 **Never accidentally share what you shouldn't.**
 
-A Manifest V3 Chrome extension that warns you before a risky link opens — and gets
-stricter the moment you're sharing your screen. Everything runs locally: no URLs,
-no page text and no browsing history ever leave the browser.
+ScreenGuard is a free, open-source Chrome extension for anyone who shares their screen:
+sales demos, support calls, interviews, classes and streams. Flip "I'm sharing my
+screen" before a call, or leave it always on, and it:
+
+- **Blurs sensitive info** in the pages you show: email addresses, phone numbers, card
+  numbers and API keys, in page text and form fields.
+- **Blocks personal pages** such as webmail, banking and chat until sharing is off.
+- **Stops risky links before they open**, so a phishing, adult or gambling page never
+  lands on the shared screen. Brand lookalikes like `paypa1.com` or `paypal-login.com`
+  are caught without flagging real sites like `google.fr` or `blog.google`.
+
+Everything runs locally: no server, no account, no analytics. No URLs, page text or
+browsing history ever leave the browser.
+
+<p align="center">
+  <img src="store/screenshots/screenguard-demo.gif" alt="ScreenGuard demo: sensitive values blur and a risky link is stopped" width="720">
+</p>
+
+## Install
+
+- **Download a release:** grab `screenguard-<version>.zip` from
+  [Releases](https://github.com/orvi2014/screenguard/releases/latest), unzip it, open
+  `chrome://extensions`, turn on **Developer mode** and click **Load unpacked** on the
+  unzipped folder.
+- **Build from source:** see [Quick start](#quick-start) below.
+<!-- Add the Chrome Web Store link here once the listing URL is known. -->
+
+## Screenshots
+
+| Sensitive info hidden while sharing | Hover warning on a risky link |
+|---|---|
+| ![Sensitive values blurred](store/screenshots/4-sensitive-hidden.png) | ![Hover warning](store/screenshots/2-hover-warning.png) |
+| **Risky page stopped before it loads** | **One switch before a call** |
+| ![Blocked page](store/screenshots/3-blocked.png) | ![Popup](store/screenshots/1-popup.png) |
 
 ---
 
